@@ -6,4 +6,4 @@ jobs:
     steps:
      - uses: actions/checkout@v4
      - run: echo "Build started from $GITHUB_SHA"
-     - run: s -la
+     - run: ls -la
