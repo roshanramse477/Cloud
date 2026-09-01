@@ -1,13 +1,13 @@
 name: CI
 on: push
 jobs: 
-  linit:
+  test:
     runs-on: ubuntu-latest
     steps:
      - uses: actions/checkout@v4
-     - run: echo "Linit step running"
-  test: 
+     - run: echo "Running Tests"
+  Deploy: 
+      needs: test
       runs-on: ubuntu-latest
       steps:
-        - uses: actions/checkout@v4
-        - run: echo "Test step running"
+        - run: echo "Deploying (only iftest passed.)"
