@@ -1,9 +1,13 @@
 name: CI
 on: push
 jobs: 
-  build:
+  linit:
     runs-on: ubuntu-latest
     steps:
      - uses: actions/checkout@v4
-     - run: echo "Build started from $GITHUB_SHA"
-     - run: ls -la
+     - run: echo "Linit step running"
+  test: 
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v4
+        - run: echo "Test step running"
