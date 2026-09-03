@@ -9,7 +9,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    steps:
     
+    steps:
       - run: echo "Deploying to $ {{ inputs.target }}"
   
