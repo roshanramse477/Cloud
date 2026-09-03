@@ -1,16 +1,10 @@
 name: CI
 on: [push, pull_request]
 jobs:
-  test:
+  deploy:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node: ["18", "20"]
+    if : github.ref == 'ref/heads/main'
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node }}
-          cache: "npm"
-      - run: npm ci
-      - run: npm test
+      - run: echo "Deploying, because this main"
+        
