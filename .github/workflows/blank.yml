@@ -1,15 +1,11 @@
 name: CI
 on: push
 jobs:
-  test:
+  deploy:
+   
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/head/main'
     steps:
       - uses: actions/checkout@v4
-      - run: echo "Running tests"
-  deploy: 
-     needs: test
-     runs-on:  ubuntu-latest
-     steps:
-       - uses: actions/checkout@v4
-       - run: echo "deploying to production"
-        
+      - run: echo "Deploying, because this is main"
+  
