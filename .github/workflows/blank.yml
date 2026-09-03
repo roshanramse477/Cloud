@@ -10,5 +10,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+    
       - run: echo "Deploying to $ {{ inputs.target }}"
   
